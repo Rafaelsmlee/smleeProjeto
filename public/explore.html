@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>smlee the way to ur smile</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/explore.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Capriola&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+
+<body onload="listarRestaurantes(), listarDescricoesRestaurantes(), listarEndereco();">
+    <header class="header" id="header">
+
+        <nav>
+            <div class="nav__header" id="nav__header">
+                <div class="logo__header" id="#logo__header">
+                    <a href="./index.html#header">
+                        <img src="assets/icons/abaa.svg" class="smlee-icon" alt="Logo do site smlee" /></a>
+                </div>
+                <ul class="a__header">
+                    <a href="./index.html" alt="botão para parte o início do site" class='btn__texto'>Início</a>
+                    <a href="./index.html#kfc" alt="botão para informações sobre KFC, Korean Fried Chicken"
+                        class='btn__texto'>KFC</a>
+                    <a href="#nav__header" alt="botão para cozinhe junto" class='btn__texto'>Recomendações</a>
+                    <a href="./dashboard/mural2.html" alt="botão para cozinhe junto" class='btn__texto'>Form</a>
+                    <a href="./smlee.html" alt="botão para sobre mim" class='btn__texto'>SMLEE</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="conteudo">
+
+
+            <!-- PRIMEIRO MODAL -->
+            <!-- PRIMEIRO MODAL -->
+            <!-- PRIMEIRO MODAL -->
+
+            <div class="hide" id="fade"></div>
+            <div class="modal-pai" id="modal-pai">
+                <div class="post">
+                    <div class="post-top">
+
+                        <!-- // container das coisas -->
+
+                        <div class="post-caixa">
+                            <img class="img-profile-icon" src="assets/invitation/polloLoko/logo2.jpg"
+                                alt="Logo do perfil restaurante Pollo Loko">
+                            <h2 class="profile-name"> <span id="a_restaurante"></span> </h2>
+                            <img class="verificado" src="assets/instagram/img/bluemark2.png"
+                                alt="Marca de verificado do Instagram">
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img class="img-post" src="./assets/invitation/polloLoko/foto3.svg"
+                            alt="Imagem de uma das franquias Pollo Loko.">
+
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-interact">
+                            <a src="dashboard/mural2.html">
+                                <ion-icon class="icon-heart" name="heart-outline"></ion-icon>
+                            </a>
+                            <a href="https://www.instagram.com/polloloko_oficial/"><ion-icon class="icon-other"
+                                    name="logo-instagram"></ion-icon></a>
+                            <ion-icon class="icon-other" name="paper-plane-outline"></ion-icon>
+
+                        </div>
+                        <div class="posttxt">
+                            <h2 class="profile"> <span id="a_restaurante_txt"></span> </h2>
+                        </div>
+                        <div class="caixa-modal">
+                            <button id="openModal">Mais informações</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- MODAL HIDE#1  -->
+                <!-- MODAL HIDE#1  -->
+                <!-- MODAL HIDE#1  -->
+
+                <div id="modal" class="hide">
+                    <div class="post">
+                        <div class="post-top">
+                            <div class="post-caixa">
+                                <img class="img-profile-icon" src="assets/invitation/polloLoko/logo2.jpg"
+                                    alt="Logo do perfil restaurante Pollo Loko">
+                                <h2 class="profile-name"> Pollo Loko</span> </h2>
+                                <img class="verificado" src="assets/instagram/img/bluemark2.png"
+                                    alt="Marca de verificado do Instagram">
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <img class="img-post" src="./assets/invitation/polloLoko/pl_02.svg"
+                                alt="Imagem de uma das franquias Pollo Loko.">
+
+                        </div>
+                        <div class="post-buttons">
+                            <div class="post-interact">
+                                <a src="dashboard/mural2.html">
+                                    <ion-icon class="icon-heart" name="heart-outline"></ion-icon>
+                                </a>
+                                <a href="https://www.instagram.com/polloloko_oficial/"><ion-icon class="icon-other"
+                                        name="logo-instagram"></ion-icon></a>
+                                <ion-icon class="icon-other" name="paper-plane-outline"></ion-icon>
+
+                            </div>
+                            <div class="posttxt">
+                                <ul class="profile-name-a">
+                                    <span id="a_endereco">Endereço: Rua Prates,340, Bom Retiro, São Paulo </span> <br>
+                                    <span id="a_funcionamento">Funcionamento: Terça, Quarta, Quinta, Sexta,
+                                        Sábado,Domingo</span><br>
+                                    <span id="a_whatsapp">WhatsApp:(11)94226-1783</span><br>
+                                </ul>
+                            </div>
+                            <div class="caixa-modal">
+
+                                <button id="closeModal">Fechar</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            </div>
+
+
+            <!-- SEGUNDO MODAL -->
+            <!-- SEGUNDO MODAL -->
+            <!-- SEGUNDO MODAL -->
+            <!-- SEGUNDO MODAL -->
+            <!-- SEGUNDO MODAL -->
+            <!-- SEGUNDO MODAL -->
+            <div class="hide" id="fade_2"></div>
+            <div class="modal-pai_2" id="modal-pai">
+                <div class="post">
+                    <div class="post-top">
+                        <div class="post-caixa">
+                            <img class="img-profile-icon" src="assets/invitation/seoulChicken/sc_logo.jpg"
+                                alt="Logo do perfil restaurante Seoul Chicken">
+                            <h2 class="profile-name"> Seoul Chicken</h2>
+                            <img class="verificado" src="assets/instagram/IMG/bluemark2.png"
+                                alt="Marca de verificado do Instagram">
+                        </div>
+
+                    </div>
+                    <div class="post-content">
+                        <img class="img-post" src="./assets/invitation/seoulChicken/sc_01.svg"
+                            alt="Imagem de propaganda do Seoul Chicken, onde há quatro pedaços de frango frito sem molho, cinco com molho apimentado de gochujang, dois pequenos recipientes com nabo, ao fundo há duas garrafas cervejas e uma garrafa de soju em um fundo de luz azul com grafite em uma lousa atrás.">
+
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-interact">
+                            <a src="dashboard/mural2.html">
+                                <ion-icon class="icon-heart" name="heart-outline"></ion-icon>
+                            </a>
+                            <a href="https://www.instagram.com/polloloko_oficial/"><ion-icon class="icon-other"
+                                    name="logo-instagram"></ion-icon></a>
+                            <ion-icon class="icon-other" name="paper-plane-outline"></ion-icon>
+
+                        </div>
+                        <div class="posttxt">
+                            <h2> <span id="b_restaurante_txt"></span> </h2>
+                        </div>
+                        <div class="caixa-modal">
+                            <button id="openModal_2">Mais informações!</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- MODAL HIDE#2  -->
+                <!-- MODAL HIDE#2  -->
+                <!-- MODAL HIDE#2  -->
+
+                <div class="hide" id="modal_2">
+                    <div class="post">
+                        <div class="post-top">
+                            <div class="post-caixa">
+                                <img class="img-profile-icon" src="assets/invitation/seoulChicken/sc_logo.jpg"
+                                    alt="Logo do perfil restaurante Seoul Chicken">
+                                <h2 class="profile-name"> <span id="b_restaurante"></span> </h2>
+                                <img class="verificado" src="assets/instagram/IMG/bluemark2.png"
+                                    alt="Marca de verificado do Instagram">
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <img class="img-post" src="./assets/invitation/seoulChicken/sc_02.svg"
+                                alt="Imagem de uma das franquias Pollo Loko.">
+
+                        </div>
+                        <div class="post-buttons">
+                            <div class="post-interact">
+                                <a src="dashboard/mural2.html">
+                                    <ion-icon class="icon-heart" name="heart-outline"></ion-icon>
+                                </a>
+                                <a href="https://www.instagram.com/polloloko_oficial/"><ion-icon class="icon-other"
+                                        name="logo-instagram"></ion-icon></a>
+                                <ion-icon class="icon-other" name="paper-plane-outline"></ion-icon>
+
+                            </div>
+                            <div class="posttxt">
+                                <ul class="profile-name">
+                                    <span id="a_endereco">Endereço: Rua Prates,340, Bom Retiro, São Paulo </span> <br>
+                                    <span id="a_funcionamento">Funcionamento: Terça, Quarta, Quinta, Sexta,
+                                        Sábado,Domingo</span><br>
+                                    <span id="a_whatsapp">WhatsApp(11)91042-2801</span><br>
+                                </ul>
+                            </div>
+                            <div class="caixa-modal">
+
+                                <button id="closeModal_2">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TERCEIRO MODAL -->
+            <!-- TERCEIRO MODAL -->
+            <!-- TERCEIRO MODAL -->
+            <!-- TERCEIRO MODAL -->
+            <!-- TERCEIRO MODAL -->
+            <!-- TERCEIRO MODAL -->
+
+
+            <div class="hide" id="fade_3"></div>
+            <div class="modal-pai_3" id="modal-pai">
+                <div class="post">
+                    <div class="post-top">
+                        <div class="post-caixa">
+                            <img class="img-profile-icon" src="assets/invitation/WakerChicken/wc_logo.png"
+                                alt="Logo do perfil restaurante WakerChicken">
+                            <h2 class="profile-name"> <span id="c_restaurante"></span> </h2>
+                            <img class="verificado" src="assets/instagram/img/bluemark2.png"
+                                alt="Marca de verificado do Instagram">
+                        </div>
+                    </div>
+
+                    <div class="post-content">
+                        <img class="img-post" src="assets/invitation/WakerChicken/wk_01.svg"
+                            alt="Imagem de dez pedaços de tulipa de frango com molho vermelho e nozes por cima.">
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-interact">
+                            <a src="dashboard/mural2.html">
+                                <ion-icon class="icon-heart" name="heart-outline"></ion-icon>
+                            </a>
+                            <a href="https://www.instagram.com/wakerchickenbrasil/"><ion-icon class="icon-other"
+                                    name="logo-instagram"></ion-icon></a>
+                            <ion-icon class="icon-other" name="paper-plane-outline"></ion-icon>
+
+                        </div>
+                        <div class="posttxt">
+                            <h2> <span id="c_restaurante_txt"></span> </h2>
+                        </div>
+                        <div class="caixa-modal">
+                            <button id="openModal_3">Mais informações!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL HIDE#3  -->
+                <!-- MODAL HIDE#3  -->
+                <!-- MODAL HIDE#3  -->
+
+
+                <div id="modal_3" class="hide">
+                    <div class="post">
+                        <div class="post-top">
+                            <div class="post-caixa">
+                                <img class="img-profile-icon" src="assets/invitation/WakerChicken/wc_logo.png"
+                                    alt="Logo do perfil restaurante Waker Chicken">
+                                <h2 class="profile-name"> Waker Chicken</span> </h2>
+                                <img class="verificado" src="assets/instagram/IMG/bluemark2.png"
+                                    alt="Marca de verificado do Instagram">
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <img class="img-post" src="./assets/invitation/WakerChicken/wk_03.svg"
+                                alt="Imagem de uma das franquias Wanker Chicken.">
+
+                        </div>
+                        <div class="post-buttons">
+                            <div class="post-interact">
+                                <a src="dashboard/mural2.html">
+                                    <ion-icon class="icon-heart" name="heart-outline"></ion-icon>
+                                </a>
+                                <a href="https://www.instagram.com/polloloko_oficial/"><ion-icon class="icon-other"
+                                        name="logo-instagram"></ion-icon></a>
+                                <ion-icon class="icon-other" name="paper-plane-outline"></ion-icon>
+
+                            </div>
+                            <div class="posttxt">
+                                <ul class="profile-name">
+                                    <span id="a_endereco">Endereço: Rua Prates,694, Bom Retiro, São Paulo </span> <br>
+                                    <span id="a_funcionamento">Funcionamento: Terça, Quarta, Quinta, Sexta,
+                                        Sábado,Domingo</span><br>
+                                    <span id="a_whatsapp">WhatsApp(11)94226-1783</span><br>
+                                </ul>
+                            </div>
+                            <div class="caixa-modal">
+
+                                <button id="closeModal_3">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </section>
+    </main>
+
+<!-- 
+ARRUMAR FOOTER 
+
+ARRUMAR FOOTER 
+
+ARRUMAR FOOTER 
+
+ARRUMAR FOOTER  -->
+
+
+    <!-- <footer>
+        <div id="footer">
+            <img src="assets/icons/logo_this.svg" class="smleee" alt="">
+        </div>
+
+        <div id="mensagemFooter">
+            <span> 웃게 해주다</span>
+        </div>
+
+        <div id="contact">
+            <a href="https://github.com/Rafaelsmlee">
+                <img src="assets/footer/github.png" alt="GitHub" width="40px">
+            </a>
+
+            <a href="https://www.instagram.com/rafews">
+                <img src="assets/footer/instagram.png" alt="Instagram" width="40px">
+            </a>
+
+            <a href="https://www.linkedin.com/in/rafael-smlee/">
+                <img src="assets/footer/linkedin.png" width="40px">
+            </a>
+
+        </div>
+    </footer> -->
+
+
+    <script src="js/explora.js"> </script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>

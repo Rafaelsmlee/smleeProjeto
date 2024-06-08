@@ -1,0 +1,73 @@
+.abt-me2{
+    justify-content: space-around;
+    font-family: var(--tituloCorpo);
+    font-size: 15px;
+ }
+ 
+
+.abt-me{
+   justify-content: space-around;
+   font-family: var(--tituloCorpo);
+   font-size: 23px;
+}
+
+.my-story{
+    width: 70%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    background-color: #f2f2f2;
+
+    border-radius: 10px;
+
+    padding: 23,23,23,23;
+}
+
+.my-story h1{
+    font-family: var(--tituloCorpo);
+    font-size: 65px;;
+    color: red;
+}
+
+.my-story p{
+    font-family: var(--tituloCorpo);
+    font-size: 54px;
+   
+    width: 50%;
+}
+
+.img-baby{
+    width: 70%;
+    height: 70%;
+}
+
+.img-baby{
+  width: 60%;
+  height: 60%;
+}
+
+.teste{
+    width: 80%;
+    display: flex;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ods{
+    display: flex;
+    flex-direction: row;
+}
+.ods img{
+    width: 60%;
+    height: 60%;
+
+}

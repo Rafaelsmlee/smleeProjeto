@@ -1,0 +1,242 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F4EDE4;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #000000;
+}
+
+.div__space {
+    height: 30px;
+}
+
+.div__spaceBig {
+    height: 73px;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+.slider {
+    height: 150px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+}
+
+.slider::before,
+.slider::after {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    content: "";
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+
+.slider::before {
+    left: 0;
+}
+
+.slider-banner {
+    display: inline-block;
+    animation: slide 40s infinite linear;
+}
+
+.slider-banner img {
+    height: 100px;
+    margin: 0 30px;
+}
+
+
+.content__kfc,
+.content__past,
+.content__modern,
+.invitation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+ .content__modernimg {
+    flex: 1 1 100px; 
+}
+
+.content__modernimg img{
+    width: 50%; 
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.content__kfcimg2,
+.content__pastimg,
+.content__comlimg,
+.content__kfcimg{
+    flex: 1 1 300px; /* Ajuste para outras imagens */
+    margin: 10px;
+}
+
+.content__kfcimg2 img,
+.content__pastimg img,
+.content__comlimg img,
+.content__kfcimg img 
+ {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.content__kfcimg p,
+.content__pastimg p,
+.content__comlimg p,
+.content__modernimg p {
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.content__kfcstory,
+.content__pastStory,
+.content__modernstory {
+    flex: 2 1 600px;
+    margin: 10px;
+}
+
+.content__kfcstory h1 {
+    color: red;
+    font-family: 'Capriola', sans-serif;
+    font-size: 36px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.content__kfcstory p,
+.content__pastStory p,
+.content__modernstory p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin: 20px;
+    text-align: left;
+}
+
+.invitation__video {
+    flex: 1 1 300px;
+}
+
+.invitation__video video {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.invitation__story {
+    flex: 2 1 600px;
+    text-align: left;
+    padding: 20px;
+}
+
+.invitation__story h1 {
+    font-family: 'Capriola', sans-serif;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+.invitation__story p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.invitation__story button {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.invitation__story button:hover {
+    background-color: #D00000;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+footer {
+    height: 10vh;
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+    z-index: 5;
+}
+
+#contact {
+    display: flex;
+    gap: 20px;
+}
+
+#contact a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+#mensagemFooter {
+    text-align: center;
+    font-family: var(--subtitle-font);
+    font-size: 2rem;
+}
+
+.smleee {
+    width: 80px;
+    height: 80px;
+}

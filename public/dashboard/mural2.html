@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review de Frango Frito Coreano</title>
+    <link rel="stylesheet" href="mural2.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+<body>
+    <header class="header">
+        <nav>
+            <div class="nav__header">
+                <div class="logo__header">
+                    <a href="../index.html#header">
+                        <img src="../assets/icons/abaa.svg" class="smlee-icon" alt="Logo do site smlee">
+                    </a>
+                </div>
+                <ul class="a__header">
+                    <li><a href="../index.html" class='btn__texto'>Início</a></li>
+                    <li><a href="../index.html#kfc" class='btn__texto'>KFC</a></li>
+                    <li><a href="../explore.html" class='btn__texto'>Recomendações</a></li>
+                    <li><a href="#form_postagem" class='btn__texto'>Form</a></li>
+                    <li><a href="../smlee.html" class='btn__texto'>SMLEE</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- <nav>
+            <div class="nav__header" id="nav__header">
+                <div class="logo__header" id="#logo__header">
+                    <a href="./index.html#header">
+                        <img src="assets/icons/abaa.svg" class="smlee-icon" alt="Logo do site smlee" />
+                </div>
+                <ul class="a__header">
+                    <a href="./index.html" alt="botão para parte o início do site" class='btn__texto'>Início</a>
+                    <a href="./index.html#kfc" alt="botão para informações sobre KFC, Korean Fried Chicken"
+                        class='btn__texto'>KFC</a>
+                    <a href="#nav__header" alt="botão para cozinhe junto" class='btn__texto'>Recomendações</a>
+                    <a href="./dashboard/mural2.html" alt="botão para cozinhe junto" class='btn__texto'>Form</a>
+                    <a href="./smlee.html" alt="botão para sobre mim" class='btn__texto'>SMLEE</a>
+                </ul>
+            </div>
+        </nav>-->
+    
+ </header> 
+    <main>
+        <h1>Review de Frango Frito Coreano</h1>
+        <section id="form_section">
+            <h2>Deixe seu Review</h2>
+            <form id="form_postagem" onsubmit="return publicar()">
+                <input type="text" id="titulo" name="titulo" placeholder="Título" required>
+                <textarea id="descricao" name="descricao" placeholder="Descrição" required></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+        <section id="feed_container">
+            <h2>Reviews Recentes</h2>
+        </section>
+    </main>
+    
+    <footer>
+        <div id="footer">
+            <img src="../assets/icons/logo_this.svg" class="smleee" alt="Logo">
+        </div>
+        <div id="mensagemFooter">
+            <span>웃게 해주다</span>
+        </div>
+        <div id="contact">
+            <a href="https://github.com/Rafaelsmlee">
+                <img src="../assets/footer/github.png" alt="GitHub" width="40px">
+            </a>
+            <a href="https://www.instagram.com/rafews">
+                <img src="../assets/footer/instagram.png" alt="Instagram" width="40px">
+            </a>
+            <a href="https://www.linkedin.com/in/rafael-smlee/">
+                <img src="../assets/footer/linkedin.png" alt="LinkedIn" width="40px">
+            </a>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

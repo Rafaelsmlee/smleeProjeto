@@ -1,0 +1,235 @@
+:root {
+    --text-dark: #212529;
+    --white: #ffffff;
+    --max-width: 1800px;
+    --titulo: "Capriola", sans-serif;
+    --texto: "Carlito", sans-serif;
+    --tituloCorpo: "Bebas Neue";
+    --textoCorpo: "Montserrat";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--texto);
+    color: var(--text-dark);
+    background-color: #f4ede4;
+}
+
+
+
+a {
+    text-decoration: none;
+    font-size: larger;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FFCE00;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: var(--max-width);
+    height: 120px;
+    margin-inline: auto;
+    font-family: var(--titulo);
+    background-color: #f4ede4;
+    z-index: 3;
+    transition: background-color 0.3s, height 0.3s;
+}
+
+.nav__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 5px 20px;
+    font-size: 3rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav__header:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--white);
+    z-index: -1;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.nav.scrolled::after {
+    height: 90px;
+}
+
+.nav.scrolled {
+    background-color: var(--white);
+    height: 90px;
+}
+
+.smlee-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.smlee-icon.scrolled {
+    padding-top: 20px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--titulo);
+}
+
+.a__header {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1%;
+    padding-right: 35%;
+}
+
+.header__textoKR {
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    font-size: 100px;
+    font-family: "Nanum Brush Script", cursive;
+    text-align: center;
+    color: #FFCE00;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header__textoBR {
+    position: absolute;
+    z-index: 1;
+    width: 85%;
+    font-size: 60px;
+    font-family: "Merienda", cursive;
+    font-weight: bold;
+    text-align: center;
+    color: var(--white);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn__texto {
+    font-size: 24px;
+}
+
+.img-container,
+.img-container2,
+.past-img,
+.coml-img,
+.modern-img {
+    margin: 2vh auto;
+    box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
+    border-radius: 0.5vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.img-container img,
+.img-container2 img,
+.past-img img,
+.modern-img img {
+    width: 100%;
+    height: auto;
+}
+
+.img-container {
+    width: 28vw;
+}
+
+.img-container2 {
+    width: 25vw;
+}
+
+.past-img {
+    width: 27vw;
+}
+
+.coml-img {
+    width: 25vw;
+}
+
+.modern-img {
+    width: 55vw;
+}
+
+.img-container p,
+.img-container2 p,
+.past-img p,
+.modern-img p {
+    font-size: 1.5vw;
+    font-style: italic;
+    margin-top: 1vh;
+}
+
+@keyframes smothScale {
+    0% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes sliderReveal {
+    0% {
+        transform: translateY(3vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes sliderRevealCenter {
+    0% {
+        transform: translate(-50%, -50%) translateY(3vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes border-animation {
+    0% {
+        border-width: 0.1vh;
+    }
+    50% {
+        border-width: 0.15vh;
+    }
+    100% {
+        border-width: 0.2vh;
+        border-radius: 0.5vh;
+    }
+}

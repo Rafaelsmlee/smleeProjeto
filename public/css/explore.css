@@ -1,0 +1,293 @@
+:root {
+    --text-dark: #212529;
+    --white: #ffffff;
+    --max-width: 1800px;
+    --titulo: "Capriola", sans-serif;
+    --texto: "Carlito", sans-serif;
+    --tituloCorpo: "Bebas Neue";
+    --textoCorpo: "Montserrat";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--texto);
+    color: var(--text-dark);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.div__spaceBig {
+    height: 73px;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    justify-content: center;
+    z-index: 3;
+}
+
+.img_story img {
+    position: absolute;
+    width: 300px;
+    z-index: 3;
+}
+
+.story h1 {
+    color: red;
+    font-family: var(--tituloCorpo);
+    font-size: 65px;
+    margin-top: 30px;
+}
+
+.story p {
+    font-family: var(--textoCorpo);
+    font-size: 23px;
+    margin: 20px 30px 0 0;
+    text-align: center;
+}
+
+.logo__header,
+.logo_header.scrolled {
+    width: 19.8%;
+}
+
+.modal-pai,
+.modal-pai_2,
+.modal-pai_3 {
+    position: absolute;
+    height: 60%;
+    width: 564px;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: sliderRevealCenter 1s ease forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.modal-pai {
+    left: 17%;
+}
+
+.modal-pai_2 {
+    left: 50%;
+    z-index: 2;
+}
+
+.modal-pai_3 {
+    left: 83%;
+    z-index: 2;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    background-color: #888;
+    color: #fff;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 1rem;
+    transition: 0.4s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#openModal,
+#openModal_2,
+#openModal_3 {
+    background-color: #007bff;
+}
+
+#fade,
+#fade_2,
+#fade_3 {
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#fade,
+#fade_2,
+#fade_3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#modal,
+#modal_2,
+#modal_3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.modal-body p {
+    margin-bottom: 1rem;
+}
+
+#modal.hide,
+#modal_2.hide,
+#modal_3.hide,
+#fade.hide,
+#fade_2.hide,
+#fade_3.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.hide,
+#modal_2.hide,
+#modal_3.hide {
+    top: 0;
+}
+
+#profile-name,
+#profile-name-a {
+    font-family: "roboto";
+    font-weight: 700;
+    font-size: 19px;
+    color: #262626;
+}
+
+#profile-name-a {
+    display: flex;
+    justify-content: space-around;
+}
+
+#a_restaurante_txt,
+#b_restaurante_txt,
+#c_restaurante_txt {
+    font-family: "roboto";
+    font-size: 16px;
+    color: #262626;
+}
+
+.post {
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    z-index: 5;
+}
+
+.post-top {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+.post-caixa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.verificado {
+    width: 20px;
+    height: 20px;
+    margin-right: 21px;
+}
+
+.img-profile-icon {
+    border-radius: 18px;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.post-content {
+    display: flex;
+    height: 80%;
+    width: 564px;
+    background-color: black;
+}
+
+.posttxt {
+    margin: 10px 0;
+    padding: 0 4px;
+}
+
+.post-interact {
+    margin-top: 20px;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-post {
+    width: 500px;
+    margin-left: 30px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.icon-heart,
+.icon-other {
+    width: 24px;
+    height: 24px;
+}
+
+.caixa-modal {
+    display: flex;
+    justify-content: center;
+}
+

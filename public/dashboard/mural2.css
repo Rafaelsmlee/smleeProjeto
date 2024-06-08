@@ -1,0 +1,149 @@
+:root {
+    --text-dark: #212529;
+    --white: #ffffff;
+    --max-width: 1800px;
+    --titulo: "Capriola", sans-serif;
+    --texto: "Carlito", sans-serif;
+    --tituloCorpo: "Bebas Neue";
+    --textoCorpo: "Montserrat";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--texto);
+    background-color: #f9f9f9;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: var(--max-width);
+    height: 120px;
+    margin-inline: auto;
+    background-color: #F4EDE4;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo__header {
+    width: 20%;
+}
+
+.logo__header img {
+    width: 100%;
+}
+
+.a__header {
+    display: flex;
+    gap: 2rem;
+}
+
+.a__header a {
+    color: #050505;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: var(--titulo);
+}
+
+.main {
+    padding: 2rem;
+    margin-top: 120px;
+}
+
+#form_section {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 5% auto;
+}
+
+#form_section h2 {
+    margin-bottom: 1rem;
+}
+
+#form_postagem input,
+#form_postagem textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form_postagem button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#feed_container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#feed_container h2 {
+    margin-bottom: 1rem;
+}
+
+.publicacao {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.publicacao:last-child {
+    border-bottom: none;
+}
+
+.publicacao-titulo,
+.publicacao-descricao {
+    margin: 0.5rem 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #F4EDE4;
+}
+
+#footer img {
+    width: 150px;
+}
+
+#mensagemFooter {
+    margin: 1rem 0;
+}
+
+#contact {
+    display: flex;
+    gap: 1rem;
+}
+
+#contact img {
+    width: 40px;
+}
