@@ -1,4 +1,4 @@
--- drop database smlee;
+ DROP DATABASE IF EXISTS smlee;
 CREATE DATABASE IF NOT EXISTS smlee;
 USE smlee;
 
@@ -78,3 +78,62 @@ VALUES
 (3, 'Whole Chicken (Normal inteira)', 'Normal inteira(Asa, coxa, sobrecoxa e peito) Com aprox. 1,1 Kg antes da fritura.', 97.90);
 
 
+
+CREATE TABLE IF NOT EXISTS frangos (
+fkRestaurante INT,
+comentario VARCHAR(300),
+avaliacao VARCHAR(5),
+
+PRIMARY KEY(fkRestaurante),
+CONSTRAINT fk_restaurante_frangos FOREIGN KEY (fkRestaurante) REFERENCES Restaurantes(idRestaurante)
+);
+
+insert into frangos (fkRestaurante, comentario, avaliacao)
+ values
+(1,'Frango muito saboroso', 5),
+(2, 'Frango muito saboroso e muito barato!', 5),
+(3, 'Garçom foi um pouco rude, mas o ambiente é lindo', 3);
+
+     select 
+          r.idRestaurante,
+          f.comentario,
+          f.avaliacao
+	FROM frangos as f
+	left join Restaurantes as r ON f.fkRestaurante = idRestaurante;
+
+
+  SELECT 
+    r.idRestaurante,
+    r.nome,
+    r.WhatsApp,
+    CONCAT(r.endereco, ', ', r.cidade, ', ', r.bairro) AS endereco_completo,
+    MIN(hf.dias_funcionamento) AS primeiro_dia,
+    MAX(hf.dias_funcionamento) AS ultimo_dia,
+    TIME_FORMAT(MIN(hf.horario_abertura), '%H:%i') AS horario_abertura,
+    TIME_FORMAT(MAX(hf.horario_fechamento), '%H:%i') AS horario_fechamento
+FROM 
+    Restaurantes AS r
+JOIN 
+    horario_funcionamento hf ON r.idRestaurante = hf.fk_restaurante
+GROUP BY 
+    r.idRestaurante, r.nome, r.WhatsApp, endereco_completo
+ORDER BY 
+    r.nome;
+
+
+
+       SELECT 
+            r.idRestaurante,
+            r.nome,
+            GROUP_CONCAT(DISTINCT hf.dias_funcionamento ORDER BY FIELD(hf.dias_funcionamento, 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo')) AS dias_funcionamento,
+            GROUP_CONCAT(DISTINCT CONCAT(hf.dias_funcionamento, ': ', hf.horario_abertura, ' - ', hf.horario_fechamento) ORDER BY FIELD(hf.dias_funcionamento, 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo')) AS horarios,
+            r.WhatsApp,
+            CONCAT(r.endereco, ', ', r.cidade, ', ', r.bairro) AS endereco_completo
+        FROM 
+            Restaurantes AS r
+        JOIN 
+            horario_funcionamento hf ON r.idRestaurante = hf.fk_restaurante
+        GROUP BY 
+            r.idRestaurante, r.nome, r.WhatsApp, endereco_completo
+        ORDER BY 
+            r.nome;

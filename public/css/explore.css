@@ -1,36 +1,7 @@
-:root {
-    --text-dark: #212529;
-    --white: #ffffff;
-    --max-width: 1800px;
-    --titulo: "Capriola", sans-serif;
-    --texto: "Carlito", sans-serif;
-    --tituloCorpo: "Bebas Neue";
-    --textoCorpo: "Montserrat";
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--texto);
-    color: var(--text-dark);
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
 .conteudo {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    min-height: 100vh; /* Garantir que a div principal ocupe a altura total da viewport */
 }
 
 .div__spaceBig {
@@ -50,17 +21,17 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
     width: 100%;
     height: 40%;
     justify-content: center;
-    z-index: 3;
+    z-index: 1;
+    position: relative; /* Trocar de absolute para relative */
 }
 
 .img_story img {
-    position: absolute;
     width: 300px;
-    z-index: 3;
+    z-index: 1;
+    margin-bottom: 30px; /* Adicionar margem para espaço visual */
 }
 
 .story h1 {
@@ -76,6 +47,8 @@ section {
     margin: 20px 30px 0 0;
     text-align: center;
 }
+
+
 
 .logo__header,
 .logo_header.scrolled {
@@ -103,12 +76,10 @@ section {
 
 .modal-pai_2 {
     left: 50%;
-    z-index: 2;
 }
 
 .modal-pai_3 {
     left: 83%;
-    z-index: 2;
 }
 
 h1 {
@@ -136,6 +107,8 @@ button:hover {
     background-color: #007bff;
 }
 
+
+
 #fade,
 #fade_2,
 #fade_3 {
@@ -155,6 +128,8 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
+
+
 
 #modal,
 #modal_2,
@@ -206,6 +181,7 @@ button:hover {
     font-weight: 700;
     font-size: 19px;
     color: #262626;
+    flex-wrap: wrap;
 }
 
 #profile-name-a {
@@ -221,11 +197,19 @@ button:hover {
     color: #262626;
 }
 
+#b_horario{
+    margin-bottom: 10px;
+}
+
+#closeModal_2{
+    margin-bottom: 10px;
+}
+
 .post {
     background-color: #FFFFFF;
     border: 1px solid #DBDBDB;
     border-radius: 3px;
-    z-index: 5;
+    z-index: 1;
 }
 
 .post-top {
@@ -270,7 +254,7 @@ button:hover {
     margin-top: 20px;
     width: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .img-post {
@@ -290,4 +274,3 @@ button:hover {
     display: flex;
     justify-content: center;
 }
-
