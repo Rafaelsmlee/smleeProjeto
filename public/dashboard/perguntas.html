@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smlee the way to ur smile</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/perguntas.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Capriola&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header" id="header">
+
+        <nav>
+            <div class="nav__header">
+                <div class="logo__header">
+                    <a href="../index.html#header">
+                        <img src="../assets/icons/abaa.svg" class="smlee-icon" alt="Logo do site smlee">
+                    </a>
+                </div>
+                <ul class="a__header">
+                    <li><a href="../index.html" class='btn__texto'>Início</a></li>
+                    <li><a href="../index.html#kfc" class='btn__texto'>KFC</a></li>
+                    <li><a href="../explore.html" class='btn__texto'>Recomendações</a></li>
+                    <li><a href="#quizForm" class='btn__texto'>Form</a></li>
+                    <li><a href="../smlee.html" class='btn__texto'>SMLEE</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form id="quizForm">
+            <label for="username">Nome:</label>
+            <input type="text" id="username" name="username" required>
+            <div id="questionsContainer"></div>
+            <button type="submit">Enviar Respostas</button>
+        </form>
+
+        <div id="forumPosts"></div>
+
+        <script src="../js/quiz.js"></script>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <img src="../assets/icons/logo_this.svg" class="smleee" alt="Logo">
+        </div>
+        <div id="mensagemFooter">
+            <span>웃게 해주다 | Make it smile</span>
+        </div>
+        <div id="contact">
+            <a href="https://github.com/Rafaelsmlee">
+                <img src="../assets/footer/github.png" alt="GitHub" width="40px">
+            </a>
+            <a href="https://www.instagram.com/rafews">
+                <img src="../assets/footer/instagram.png" alt="Instagram" width="40px">
+            </a>
+            <a href="https://www.linkedin.com/in/rafael-smlee/">
+                <img src="../assets/footer/linkedin.png" alt="LinkedIn" width="40px">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

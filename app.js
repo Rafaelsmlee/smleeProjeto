@@ -18,9 +18,12 @@ var app = express();
 var indexRouter = require("./src/routes/index");
 var listarRestaurantes = require("./src/routes/explore");
 var listarEndereco = require("./src/routes/endereco");
+var reviewRouter = require("./src/routes/review");
+var perguntasRouter = require("./src/routes/perguntas");
 
 
-// var exploreImgRouter =  require("./src/routes/exploreImg");
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +32,10 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/", listarRestaurantes);
-app.use("/",listarEndereco);
+app.use("/", listarEndereco);
+app.use("/", reviewRouter);
+app.use("/", perguntasRouter);
+
 
 
 app.listen(PORTA_APP, function () {

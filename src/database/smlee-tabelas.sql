@@ -72,34 +72,24 @@ INSERT INTO menu_itens (fk_restaurante, prato, menu_descricao, preco)
 VALUES 
 (1, 'Combo Asa G', 'Mega porção de frango frito com pedaços de Asinha E Coxinha.Acompanha porção de batata rústica e mais 4 molhos especiais.Serve até 3 pessoas', 65.00),
 (1, 'Combo Pollo Loko G', 'Mega porção de frango frito com pedaços variados de Coxa, Sobrecoxa, Asinha E Coxinha. Acompanha porção de batata rústica e mais 4 molhos especiais. Serve até 4 pessoas', 65.00),
-(2, 'Frango frito Yangnyom s/ osso', 'Com molho levemente apimentado agridoce - 900g Serve ate três pessoas, acompanha batata frita, nabo em conserva, salada de repolho com maionese, maionese de alho e molho barbecue.', 90.00),
-(2, 'Frango frito Galbi s/ osso', 'Feito na base de shoyu levemente agridoce, acompanha batata frita, nabo em conserva, molho de alho e molho barbecue', 90.00),
+(2, 'Frango frito Yangnyom s/ osso', 'Com molho levemente apimentado agridoce - 900g Serve ate três pessoas, acompanha batata frita, nabo em conserva, salada de repolho com maionese, maionese de alho e molho barbecue.', 80.00),
+(2, 'Frango frito Galbi s/ osso', 'Feito na base de shoyu levemente agridoce, acompanha batata frita, nabo em conserva, molho de alho e molho barbecue', 80.00),
 (3, 'Drumete (coxinha da asa) Inteira', 'Drumete (coxinha da asa) com aprox. 900g antes da fritura. Podendo escolher entre a massa tradicional ou a massa hot', 97.90),
 (3, 'Whole Chicken (Normal inteira)', 'Normal inteira(Asa, coxa, sobrecoxa e peito) Com aprox. 1,1 Kg antes da fritura.', 97.90);
 
 
 
-CREATE TABLE IF NOT EXISTS frangos (
-fkRestaurante INT,
-comentario VARCHAR(300),
-avaliacao VARCHAR(5),
 
-PRIMARY KEY(fkRestaurante),
-CONSTRAINT fk_restaurante_frangos FOREIGN KEY (fkRestaurante) REFERENCES Restaurantes(idRestaurante)
+CREATE TABLE IF NOT EXISTS reviews (
+    id INT AUTO_INCREMENT,
+    fk_restaurante INT,
+    comentario TEXT,
+    avaliacao DECIMAL(2,1),
+    data_insercao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    PRIMARY KEY(id),
+    CONSTRAINT review_fkrestaurante FOREIGN KEY(fk_restaurante) REFERENCES Restaurantes(idRestaurante)
 );
-
-insert into frangos (fkRestaurante, comentario, avaliacao)
- values
-(1,'Frango muito saboroso', 5),
-(2, 'Frango muito saboroso e muito barato!', 5),
-(3, 'Garçom foi um pouco rude, mas o ambiente é lindo', 3);
-
-     select 
-          r.idRestaurante,
-          f.comentario,
-          f.avaliacao
-	FROM frangos as f
-	left join Restaurantes as r ON f.fkRestaurante = idRestaurante;
 
 
   SELECT 
@@ -137,3 +127,162 @@ ORDER BY
             r.idRestaurante, r.nome, r.WhatsApp, endereco_completo
         ORDER BY 
             r.nome;
+
+CREATE TABLE usuario (
+id INT AUTO_INCREMENT,
+nome VARCHAR(50),
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE perguntas (
+id INT AUTO_INCREMENT,
+pergunta VARCHAR(100) NOT NULL,
+
+PRIMARY KEY (id)
+);
+
+CREATE TABLE alternativas (
+id INT AUTO_INCREMENT,
+resposta VARCHAR(45) NOT NULL,
+fkPerguntas INT NOT NULL,
+
+PRIMARY KEY (id),
+FOREIGN KEY (fKPerguntas) REFERENCES perguntas (id)
+
+);
+
+CREATE TABLE alternativa_escolhida (
+id INT AUTO_INCREMENT,
+fkUsuario INT NOT NULL,
+fkPerguntas INT NOT NULL,
+fkAlternativas INT NOT NULL,
+
+PRIMARY KEY (id),
+FOREIGN KEY (fkUsuario) REFERENCES usuario (id),
+FOREIGN KEY (fKPerguntas) REFERENCES perguntas (id),
+FOREIGN KEY (fkAlternativas) REFERENCES alternativas (id)
+
+);
+
+
+INSERT INTO usuario
+(nome)
+VALUES
+('Betina'),
+('Cláudio'),
+('Paula');
+
+INSERT INTO perguntas
+(pergunta)
+VALUES
+('Você prefere um toque picante ou algo mais suave?'),
+('Em qual tipo de ambiente você gostaria de aproveitar a sua refeição?'),
+('Você já tem um orçamento em mente?'),
+('Qual o molho que você mais gostaria de experimentar? '),
+('Você já foi em algum dos restaurantes recomendados? Qual?');
+
+INSERT INTO alternativas
+(resposta, fKPerguntas)
+VALUES
+('Suave', 1),
+('Moderado', 1),
+('Picante', 1),
+
+('Familiar', 2),
+('Casual', 2),
+('Fast-food', 2),
+
+('Até R$70,00', 3),
+('Até R$80,00', 3),
+('Até R$100,00', 3),
+
+('Yangnyom(Apimentado agridoce)', 4),
+('Galbi(Shoyo agridoce)' , 4),
+('Honey Garlic(Mel e alho) coreano', 4),
+('Spicy(Apimentado)',4),
+
+('Pollo Loko', 5),
+('Seoul Chicken' , 5),
+('Waker Chicken',5),
+('Não, é a minha primeira vez', 5);
+
+INSERT INTO alternativa_escolhida
+(fkUsuario, fkAlternativas, fKPerguntas)
+VALUES
+(1, 3, 1),
+(1, 5, 2),
+(1, 7, 3),
+(1, 12, 4),
+(1, 17,5),
+
+
+(2, 1, 1),
+(2, 4, 2),
+(2, 9, 3),
+(2, 11, 4),
+(2, 17,5),
+
+(3, 2, 1),
+(3, 4, 2),
+(3, 8, 3),
+(3, 10, 4),
+(3, 17,5);
+
+
+SELECT u.nome,
+COUNT(altEsc.fkAlternativas) AS total_perg1, altEsc.fkAlternativas, 
+altEsc.fKPerguntas
+ FROM alternativa_escolhida AS altEsc 
+ INNER JOIN alternativas AS a ON altEsc.fkAlternativas = a.id 
+ INNER JOIN perguntas AS q ON altEsc.fKPerguntas = q.id
+ INNER JOIN usuario AS u ON altEsc.fkUsuario = u.id
+ WHERE altEsc.fKPerguntas = 1 
+ AND altEsc.fkAlternativas IN (1, 2, 3)
+ GROUP BY  u.nome, altEsc.fkAlternativas, altEsc.fKPerguntas ORDER BY altEsc.fkAlternativas;
+ 
+ SELECT  u.nome,
+ COUNT(altEsc.fkAlternativas) AS total_perg2, altEsc.fkAlternativas, 
+ altEsc.fKPerguntas 
+ FROM alternativa_escolhida AS altEsc 
+ INNER JOIN alternativas AS a ON altEsc.fkAlternativas = a.id 
+ INNER JOIN perguntas AS q ON altEsc.fKPerguntas = q.id 
+ INNER JOIN usuario AS u ON altEsc.fkUsuario = u.id 
+ WHERE altEsc.fKPerguntas = 2
+ AND altEsc.fkAlternativas IN (4, 5, 6) 
+ GROUP BY  u.nome,altEsc.fkAlternativas, altEsc.fKPerguntas ORDER BY altEsc.fkAlternativas;
+ 
+ 
+  SELECT u.nome,
+COUNT(altEsc.fkAlternativas) AS total_perg3, altEsc.fkAlternativas, 
+ altEsc.fKPerguntas 
+ FROM alternativa_escolhida AS altEsc 
+ INNER JOIN alternativas AS a ON altEsc.fkAlternativas = a.id 
+ INNER JOIN perguntas AS q ON altEsc.fKPerguntas = q.id 
+ INNER JOIN usuario AS u ON altEsc.fkUsuario = u.id 
+ WHERE altEsc.fKPerguntas = 3
+ AND altEsc.fkAlternativas IN (7, 8, 9) 
+ GROUP BY  u.nome, altEsc.fkAlternativas, altEsc.fKPerguntas ORDER BY altEsc.fkAlternativas;
+ 
+   SELECT COUNT(altEsc.fkAlternativas) AS total_perg4, altEsc.fkAlternativas, 
+ altEsc.fKPerguntas 
+ FROM alternativa_escolhida AS altEsc 
+ INNER JOIN alternativas AS a ON altEsc.fkAlternativas = a.id 
+ INNER JOIN perguntas AS q ON altEsc.fKPerguntas = q.id 
+ INNER JOIN usuario AS u ON altEsc.fkUsuario = u.id 
+ WHERE altEsc.fKPerguntas = 4
+ AND altEsc.fkAlternativas IN (10, 11, 12, 13) 
+ GROUP BY altEsc.fkAlternativas, altEsc.fKPerguntas ORDER BY altEsc.fkAlternativas;
+ 
+ 
+ SELECT COUNT(altEsc.fkAlternativas) AS total_perg5, altEsc.fkAlternativas, 
+ altEsc.fKPerguntas 
+ FROM alternativa_escolhida AS altEsc 
+ INNER JOIN alternativas AS a ON altEsc.fkAlternativas = a.id 
+ INNER JOIN perguntas AS q ON altEsc.fKPerguntas = q.id 
+ INNER JOIN usuario AS u ON altEsc.fkUsuario = u.id 
+ WHERE altEsc.fKPerguntas = 5
+ AND altEsc.fkAlternativas IN (14, 15, 16, 17) 
+ GROUP BY altEsc.fkAlternativas, altEsc.fKPerguntas ORDER BY altEsc.fkAlternativas;
+ 
+ 
