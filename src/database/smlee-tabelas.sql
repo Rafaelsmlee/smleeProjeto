@@ -284,5 +284,14 @@ COUNT(altEsc.fkAlternativas) AS total_perg3, altEsc.fkAlternativas,
  WHERE altEsc.fKPerguntas = 5
  AND altEsc.fkAlternativas IN (14, 15, 16, 17) 
  GROUP BY altEsc.fkAlternativas, altEsc.fKPerguntas ORDER BY altEsc.fkAlternativas;
- 
+
+-- 
+
+   SELECT u.nome, GROUP_CONCAT(a.resposta ORDER BY ae.fkPerguntas) AS respostas
+        FROM alternativa_escolhida ae
+        JOIN usuario u ON ae.fkUsuario = u.id
+        JOIN alternativas a ON ae.fkAlternativas = a.id
+        GROUP BY u.id, u.nome;
+
+
  

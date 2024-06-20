@@ -94,7 +94,7 @@ h1 {
 
 button {
     padding: 0.6rem 1.2rem;
-    background-color: #888;
+    background-color: red;
     color: #fff;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -275,4 +275,11 @@ button:hover {
 .caixa-modal {
     display: flex;
     justify-content: center;
+}
+
+.caixa-modal2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

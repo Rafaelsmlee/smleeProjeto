@@ -22,9 +22,6 @@ var reviewRouter = require("./src/routes/review");
 var perguntasRouter = require("./src/routes/perguntas");
 
 
-
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
