@@ -17,9 +17,8 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var exploreRouter = require("./src/routes/explore");
-var exploreImgRouter =  require("./src/routes/exploreImg");
 var formRouter = require("./src/routes/dashboard/formRoutes");
-var muralRouter = require("./mural12");
+
 
 
 app.use(express.json());
@@ -29,9 +28,8 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/", exploreRouter);
-app.use("/", exploreImgRouter);
 app.use("/dashboard", formRouter);
-app.use("/", muralRouter); 
+
 
 app.listen(PORTA_APP, function () {
     console.log(`

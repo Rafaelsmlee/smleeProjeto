@@ -193,9 +193,9 @@ VALUES
 ('Casual', 2),
 ('Fast-food', 2),
 
-('Até R$70,00', 3),
-('Até R$80,00', 3),
-('Até R$100,00', 3),
+('Até R$70.00', 3),
+('Até R$80.00', 3),
+('Até R$100.00', 3),
 
 ('Yangnyom(Apimentado agridoce)', 4),
 ('Galbi(Shoyo agridoce)' , 4),
@@ -205,7 +205,7 @@ VALUES
 ('Pollo Loko', 5),
 ('Seoul Chicken' , 5),
 ('Waker Chicken',5),
-('Não, é a minha primeira vez', 5);
+('Não! É a minha primeira vez', 5);
 
 INSERT INTO alternativa_escolhida
 (fkUsuario, fkAlternativas, fKPerguntas)
