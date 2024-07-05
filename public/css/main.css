@@ -168,26 +168,34 @@ a:hover {
 }
 
 .invitation__story {
+    display: flex;
+    flex-direction: column;
     flex: 2 1 600px;
     text-align: left;
     padding: 20px;
+    
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+ 
 }
 
 .invitation__story h1 {
     font-family: 'Capriola', sans-serif;
     font-size: 36px;
-    margin-top: 0;
+
 }
 
 .invitation__story p {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    margin: 20px 0;
+    margin: 20px;
 }
 
 .invitation__story button {
     background-color: #FF0000;
     color: #FFFFFF;
+    width: 40%;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
